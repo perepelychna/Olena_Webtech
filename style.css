@@ -1,0 +1,83 @@
+body {
+  background-color: #f4efea;
+  color: #3a2e2b;
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 40px 20px;
+
+  /* Центрируем всю страницу на экране */
+  display: flex;
+  justify-content: center;
+}
+
+/* Создаем аккуратную карточку для рецепта */
+.recipe-card {
+  max-width: 650px; /* Ограничиваем ширину, чтобы текст не растягивался на весь экран */
+  width: 100%;
+  background-color: #faf6f0; /* Чуть более светлый крем для самой карточки */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(58, 46, 43, 0.05);
+
+  /* Блоки внутри карточки теперь будут идти строго сверху вниз */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Красивая большая картинка */
+img {
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  object-fit: cover; /* Картинка аккуратно подрежется, а не сожмется */
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+/* Название супа */
+h1 {
+  font-size: 2.5rem;
+  color: #3a2e2b;
+  margin: 0 0 12px 0;
+}
+
+/* Описание */
+p {
+  font-size: 1.1rem;
+  color: #5c4a45;
+  font-style: italic;
+  margin: 0 0 32px 0;
+  border-bottom: 2px solid #99745b; /* Линия-разделитель снизу */
+  padding-bottom: 24px;
+}
+
+/* Заголовки Ingredients и Steps */
+h2 {
+  font-size: 1.3rem;
+  color: #3a2e2b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 24px 0 16px 0;
+  border-left: 4px solid #c59a7e;
+  padding-left: 12px;
+}
+
+/* Списки */
+ul,
+ol {
+  padding-left: 24px;
+  margin: 0 0 24px 0;
+}
+
+li {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+/* Красивые цветные маркеры */
+ul li::marker,
+ol li::marker {
+  color: #c59a7e;
+  font-weight: bold;
+}
