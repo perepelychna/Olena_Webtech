@@ -1,0 +1,44 @@
+body {
+  font-family: sans-serif;
+  background-color: #f0f0f0;
+}
+
+.card {
+  background-color: white;
+  width: 400px;
+  margin: 100px auto;
+  margin-top: 100px;
+  padding: 50;
+  /* the card is stuck to the top-left corner of the page */
+}
+
+img {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: auto;
+}
+
+.card-body {
+  padding: 25px;
+  /* all text sits flush against the edge of the card */
+}
+
+.tag {
+  background-color: #12e571;
+  color: white;
+  padding: 5px 10px;
+  padding-bottom: 5px; /* the text is touching the edges of the green label */
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  /* there is too much space above the heading */
+}
+
+p {
+  margin-bottom: 0;
+  padding-bottom: 14px;
+  /* the link below feels too close to the paragraph */
+}
