@@ -8,6 +8,7 @@
 // ============================================================
 
 // Formats a price with a currency symbol
+
 function formatPrice(amount, currency) {
   return `${currency} ${amount.toFixed(2)}`;
 }
@@ -24,12 +25,14 @@ console.log(formatPrice(19.99, "CHF"));
 //         it takes two parameters: price and percent
 //         it should log the reduced price
 //         EXAMPLE: discount(100, 20) → "Price after discount: CHF 80.00"
+
 function discount(price, percent) {
   const reducedPrice = price - (price * (percent / 100));
   console.log(`Price after discount: CHF ${reducedPrice.toFixed(2)}`);
 }
 
 // TODO 3: call discount() with two different examples
+
 discount(100, 20); // → Price after discount: CHF 80.00
 discount(50, 10);  // → Price after discount: CHF 45.00
 
@@ -51,6 +54,7 @@ discount(50, 10);  // → Price after discount: CHF 45.00
 
 // TODO 4: formatPrice was rewritten above to RETURN the formatted string
 //         instead of logging it directly. All calls now use console.log().
+
 console.log(formatPrice(9.9, 'CHF')); // → CHF 9.90
 
 
@@ -64,7 +68,7 @@ console.log(formatPrice(9.9, 'CHF')); // → CHF 9.90
 const cart = [
   { name: 'Tomatoes',  price: 2.5 },
   { name: 'Bread',     price: 4.2 },
-  { name: 'Olive Oil', price: 8.9 },
+  { name: 'Olive Oil', price: 8.9, soldOut: true },
 ];
 
 // TODO 5: define a function called printCart
