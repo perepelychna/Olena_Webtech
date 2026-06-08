@@ -25,13 +25,13 @@ const list = document.getElementById('results');
 button.addEventListener('click', () => {
   const query = input.value;
   
-  list.innerHTML = '<li>Загрузка...</li>';
+  list.innerHTML = '<li>Loading...</li>';
 
 
   fetch(`https://openlibrary.org/search.json?q=${query}`)
     .then(response => response.json())
     .then(data => {
-      list.innerHTML = ''; // Очищаем список
+      list.innerHTML = ''; 
       
 
       const books = data.docs.slice(0, 10);
@@ -40,14 +40,14 @@ button.addEventListener('click', () => {
         const li = document.createElement('li');
         
 
-        const author = book.author_name ? book.author_name[0] : 'Автор неизвестен';
+        const author = book.author_name ? book.author_name[0] : 'Author unknown';
         
         li.textContent = `${book.title} — ${author}`;
         list.appendChild(li);
       });
     })
     .catch(error => {
-      list.innerHTML = '<li>Ошибка при поиске книг.</li>';
+      list.innerHTML = '<li>Error occurred while searching for books.</li>';
       console.error(error);
     });
 });
