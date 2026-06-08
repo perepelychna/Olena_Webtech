@@ -24,22 +24,19 @@ const list = document.getElementById('results');
 
 button.addEventListener('click', () => {
   const query = input.value;
-  
-  list.innerHTML = '<li>Loading...</li>';
 
+  list.innerHTML = '<li>Loading...</li>';
 
   fetch(`https://openlibrary.org/search.json?q=${query}`)
     .then(response => response.json())
     .then(data => {
       list.innerHTML = ''; 
       
-
       const books = data.docs.slice(0, 10);
       
       books.forEach(book => {
         const li = document.createElement('li');
         
-
         const author = book.author_name ? book.author_name[0] : 'Author unknown';
         
         li.textContent = `${book.title} — ${author}`;
