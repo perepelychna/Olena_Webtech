@@ -18,5 +18,38 @@
 //
 //
 // ============================================================
+const input = document.getElementById('search-input');
+const button = document.getElementById('search-btn');
+const list = document.getElementById('results');
+
+button.addEventListener('click', () => {
+  const query = input.value;
+  
+  list.innerHTML = '<li>Загрузка...</li>';
+
+
+  fetch(`https://openlibrary.org/search.json?q=${query}`)
+    .then(response => response.json())
+    .then(data => {
+      list.innerHTML = ''; // Очищаем список
+      
+
+      const books = data.docs.slice(0, 10);
+      
+      books.forEach(book => {
+        const li = document.createElement('li');
+        
+
+        const author = book.author_name ? book.author_name[0] : 'Автор неизвестен';
+        
+        li.textContent = `${book.title} — ${author}`;
+        list.appendChild(li);
+      });
+    })
+    .catch(error => {
+      list.innerHTML = '<li>Ошибка при поиске книг.</li>';
+      console.error(error);
+    });
+});
 
 console.log("script loaded");
